@@ -1,0 +1,24 @@
+{
+  "name": "resource-mgmt",
+  "version": "1.0.0",
+  "description": "this is reference project for the DVOPS subject",
+  "homepage": "https://github.com/j3r0meee/resource-mgmt#readme",
+  "bugs": {
+    "url": "https://github.com/j3r0meee/resource-mgmt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j3r0meee/resource-mgmt.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.4.0",
+    "express": "^5.3.0"
+  }
+}
