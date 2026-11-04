@@ -18,6 +18,7 @@ function editResource(data) {
     $('#editResourceModal').modal('show');
 }
 
+
 // Function to send updated resource data to the backend API
 function updateResource(id) {
     var response = "";
@@ -43,6 +44,7 @@ function updateResource(id) {
 
     // Configure the request as PUT to the edit-resource endpoint with the resource ID
     var request = new XMLHttpRequest();
+
     request.open("PUT", "/edit-resource/" + id, true);
     request.setRequestHeader('Content-Type', 'application/json');
 
@@ -52,9 +54,10 @@ function updateResource(id) {
         // If the backend confirms success, show an alert and reload the page
         if (response.message == "Resource updated successfully!") {
             alert('Edited Resource: ' + jsonData.name + '!');
+
             $('#editResourceModal').modal('hide');
 
-            viewResources(); // Reload table content
+            viewResources();
         } else {
             // Show error if update failed
             alert('Unable to edit resource!');

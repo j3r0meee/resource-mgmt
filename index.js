@@ -16,21 +16,22 @@ app.delete('/delete-resource/:id', deleteResource);
 
 
 const { viewResources } = require('./utils/ViewResourceUtil')
-app.get('/view-resources', viewResources);    
+app.get('/view-resources', viewResources)
+
 
 const { addResource } = require('./utils/AddResourceUtil')
 app.post('/add-resource', addResource);
 
 
 app.get('/', (req, res) => {
-res.sendFile(__dirname + "/public/" + startPage);
+    res.sendFile(__dirname + "/public/" + startPage);
 })
 
 server = app.listen(PORT, function () {
     const address = server.address();
     const baseUrl = `http://${address.address == "::" ? 'localhost' :
-address.address}:${address.port}`;
+        address.address}:${address.port}`;
     console.log(`Demo project at: ${baseUrl}`);
-});
+})
 
-module.exports = {app, server}
+module.exports = { app, server }
