@@ -1,6 +1,5 @@
 const fs = require('fs').promises;
 const path = require('path');
-
 const RESOURCES_FILE = path.join('utils', 'resources.json');
 
 async function viewResources(req, res) {
@@ -11,7 +10,7 @@ async function viewResources(req, res) {
     } catch (error) {
         // Handle case where file does not exist yet
         if (error.code === 'ENOENT') {
-            return res.status(200).json([]);
+            return res.status(200).json([]); // return empty list if no file
         }
         return res.status(500).json({ message: error.message });
     }
